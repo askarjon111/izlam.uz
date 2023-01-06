@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+templatemo_520_highway/
+media/

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="grid-portfolio" id="portfolio">
+    <div class="container">
+        <div class="row" id="contents">
+            {% for post in object_list %}
+            <div class="sinle_content col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <div class="thumb">
+                        <a href="{{ post.cover_image.url }}" data-lightbox="image-1">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>{{ post.title }}</em></h1>
+                                    <p>Subheading</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="image">
+                            <img src="{{ post.cover_image.url }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="spinner-border text-primary mt-2 not-visible" role="status" id="spinner">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="load-more-button" id="load-more">
+                    <a href="#">Load More</a>
+                </div>
+                <div class="alert alert-danger mt-2 not-visible" role="alert" id='alert'>
+                    No more post to load!!
+                </div>
+            </div>
+        </div>
+        {{total_obj|json_script:"json-total"}}
+    </div>
+</div>
+{% endblock content %}
+{% block script %}
+<script src="{% static 'js/load-more.js' %}" defer></script>
+{% endblock script %}
