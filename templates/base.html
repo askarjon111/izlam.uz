@@ -30,7 +30,7 @@
             <a href="{% url 'home' %}">Izlam<em>.uz</em></a>
         </div>
         <div class="menu-icon">
-            <span>Test</span>
+            <span>..</span>
         </div>
     </nav>
 
@@ -50,65 +50,22 @@
         <button id="modBtn" class="modal-btn"><img src="{% static 'img/contact-icon.png' %}" alt=""></button>
     </div>
 
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <!-- Modal Content -->
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h3 class="header-title">Say hello to <em>Mohira</em></h3>
-                <div class="close-btn"><img src="{% static 'img/close_contact.png' %}" alt=""></div>
-            </div>
-            <!-- Modal Body -->
-            <div class="modal-body">
-                <div class="col-md-6 col-md-offset-3">
-                    <form id="contact" action="" method="post">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <fieldset>
-                                    <input name="name" type="text" class="form-control" id="name"
-                                        placeholder="Your name..." required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-md-12">
-                                <fieldset>
-                                    <input name="email" type="email" class="form-control" id="email"
-                                        placeholder="Your email..." required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-md-12">
-                                <fieldset>
-                                    <textarea name="message" rows="6" class="form-control" id="message"
-                                        placeholder="Your message..." required=""></textarea>
-                                </fieldset>
-                            </div>
-                            <div class="col-md-12">
-                                <fieldset>
-                                    <button type="submit" id="form-submit" class="btn">Send Message Now</button>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <section class="overlay-menu">
         <div class="container">
             <div class="row">
                 <div class="main-menu">
                     <ul>
                         <li>
-                            <a href="{% url 'home' %}">Home</a>
+                            <a href="{% url 'home' %}">Bosh sahifa</a>
                         </li>
                         <li>
-                            <a href="{% url 'post_list' %}">Projects</a>
+                            <a href="{% url 'post_list' %}">Maqolalar</a>
                         </li>
                         <li>
-                            <a href="about.html">About Me</a>
+                            <a href="#">Men haqimda</a>
                         </li>
                     </ul>
-                    <p>Welcome to the world of art</p>
+                    <p>Xush kelibsiz!</p>
                 </div>
             </div>
         </div>
