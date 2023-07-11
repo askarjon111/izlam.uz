@@ -1,4 +1,5 @@
 {% load static %}
+{% load component_tags %}
 <!DOCTYPE html>
 <html>
 
@@ -58,9 +59,11 @@
                         <li>
                             <a href="{% url 'home' %}">Bosh sahifa</a>
                         </li>
+                        {% for category in categories %}
                         <li>
-                            <a href="{% url 'post_list' %}">Maqolalar</a>
+                            <a href="#">{{ category.name }}</a>
                         </li>
+                        {% endfor %}
                         <li>
                             <a href="#">Men haqimda</a>
                         </li>

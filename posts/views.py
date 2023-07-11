@@ -1,7 +1,8 @@
 from django.http import JsonResponse
+from django_components import component
 from django.views.generic import ListView, DetailView
 
-from posts.models import Post
+from posts.models import Category, Post
 
 
 class HomeView(ListView):
@@ -20,6 +21,16 @@ def load_more(request):
     object_list = list(Post.objects.values()[loaded_item_int:loaded_item_int+limit])
     data = {'object_list': object_list}
     return JsonResponse(data=data)
+
+
+@component.register("categories")
+class Base(component.Component):
+
+    def get_context_data(self):
+        categories = Category.objects.all()
+        return {
+            "categories": categories,
+        }
 
 
 class SinglePost(DetailView):
